@@ -18,19 +18,31 @@
  * 
  * ALGORITMA 
  * 1. Tentukan string
- * 2. Cek string, jika genap semua tampilkan tidak ada yang ganjil
- * 3. Jika ada angka ganjil lanjut ke langkah selanjutnya
- * 4. Gunakan nested loop untuk mengisi variabel angkaBaru
- * 5. Buat variabel angkaBaruGanjil dengan mengetes variabel angkaBaru % 2 tidak sama dengan 0
- * 6. Buat variabel hasil, jika angkaBaruGanjil > hasil inputkan kedalam hasil
- * 7. Tampilkan hasil
+ * 2. membuat varibel "hasil" yang awalnya bernilai 0
+ * 3. Gunakan looping untuk mengisi variabel cek. index depan sebagai puluhan, index setelahnya sebagai satuan
+ * 4. Jika angka yang terbentuk pada variabel cek adalah ganjil lanjut ke langkah selanjutnya
+ * 5. Jika variabel cek lebih besar dari hasil, maka hasil bernilai variabel cek
+ * 6. Jika variabel bernilai 0 maka angka yang terbentuk pada variabel cek semuanya genap
+ * 7. Jika bukan 0, tampilkan hasil
  */
 
 
 function oddFinder(string) {
+   var hasil = 0;
    for (var i = 0; i < string.length; i++) {
-      
+      var cek = parseInt(string[i]) * 10 + parseInt(string[i+1]);
+      if (cek % 2 == 1) {
+         if (cek > hasil) {
+            hasil = cek;
+         }
+      }
    }
+
+   if (hasil == 0) {
+      return 'Tidak ada yang ganjil';
+   }
+   
+   return hasil;
 }
 
 
