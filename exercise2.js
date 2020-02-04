@@ -1,9 +1,11 @@
-var teks = 'hello world!';
-var teksArray = teks.split('');
-var hasil = '';
+function balikString(str) {
+    var hasil = '';
 
-for (var i = teksArray.length-1; i >= 0; i--) {
-    hasil += teksArray[i];
+    for (var i = str.length-1; i >= 0; i--) {
+        hasil += str[i];
+    }
+
+    return hasil;
 }
 
-console.log(hasil);
+console.log(balikString('hello world!'));
