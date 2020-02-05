@@ -53,7 +53,7 @@
  */
 
 var line = 'abcde&12345' //kalian bisa mengubah isi dari 'line' untuk menguji contoh-contoh string yang lainnya
-var param = 'sigma' //kalian bisa mengisi param ini dengan 'sigma', 'letters', 'length', dll
+var param = 'length' //kalian bisa mengisi param ini dengan 'sigma', 'letters', 'length', dll
 
 //tulis kode kalian disini
 var huruf = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -63,15 +63,17 @@ var jumlahAngka = 0;
 
 if (param === 'letters') {
     for (var i = 0; i < line.length; i++) {
-        if (huruf.indexOf(line[i]) != -1) {
-            jumlahHuruf++
+        for (var h = 0; h < huruf.length; h++){
+            if (line[i] == huruf[h]) {
+                jumlahHuruf++
+            }
         }
     }
     console.log(jumlahHuruf);
 }
 else if (param === 'sigma') {
     for (var j = 0; j < line.length; j++) {
-        if (angka.indexOf(line[j]) != -1) {
+        if (Number(line[j]) == line[j]){
             jumlahAngka += parseInt(line[j]);
         }
     }
@@ -79,12 +81,21 @@ else if (param === 'sigma') {
 }
 else if (param === 'length') {
     for (var k = 0; k < line.length; k++) {
-        if (huruf.indexOf(line[k]) != -1) {
-            jumlahHuruf++
-        }
-        else if (angka.indexOf(line[k]) != -1) {
+        if (Number(line[k]) == line[k]){
             jumlahAngka++
         }
+        
+        for (let h = 0; h < huruf.length; h++) {
+            if (line[k] == huruf[h]) {
+                jumlahHuruf++
+            }
+        }
+        // if (huruf.indexOf(line[k]) != -1) {
+        //     jumlahHuruf++
+        // }
+        // else if (angka.indexOf(line[k]) != -1) {
+        //     jumlahAngka++
+        // }
     }
     console.log(jumlahAngka + jumlahHuruf);
 }
