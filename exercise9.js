@@ -4,9 +4,21 @@ function cariMean(arr) {
         jumlah += arr[i];
     }
 
-    var rerata = Math.round(jumlah / arr.length);
-
-    return rerata;
+    var rerata = parseInt(jumlah/arr.length*10);
+    if (rerata % 10 != 0 && rerata % 10 >= 5) {
+        var pembulatan = 10 - (rerata % 10);
+        var hasil = (rerata + pembulatan) / 10;
+        return hasil;
+    }
+    else if (rerata % 10 != 0 && rerata % 10 < 5) {
+        var pembulatan = rerata % 10;
+        var hasil = (rerata - pembulatan) / 10;
+        return hasil;
+    }
+    else {
+        var hasil = rerata / 10;
+        return hasil;
+    }
 }
   
   // TEST CASES
