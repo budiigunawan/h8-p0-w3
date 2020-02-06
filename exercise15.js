@@ -17,7 +17,14 @@ function groupAnimals(animals) {
     var ind = 0;
 
     for (let k = 0; k < animals.length; k++) {
-        var indeks = cek.indexOf(animals[k][0]);
+        var indeks = -1;
+
+        for (let a = 0; a < cek.length; a++) {
+            if (animals[k][0] == cek[a]) {
+                indeks = a;
+            }
+        }
+
         if (indeks == -1) {
             hasil[ind] = [];
             hasil[ind].push(animals[k]);
