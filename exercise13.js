@@ -17,7 +17,12 @@ function targetTerdekat(arr) {
     else {
         var hasil = 0;
         for (let j = 0; j < posX.length; j++){
-            var temp = Math.abs(posX[j]-posO[0]);
+            var temp = posX[j]-posO[0];
+
+            if (temp < 0) {
+                temp = temp * -1;
+            }
+            
             if (hasil == 0 || temp < hasil){
                 hasil = temp;
             }
