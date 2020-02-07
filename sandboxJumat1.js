@@ -9,7 +9,7 @@
 // jika result sama check = true.
 //endperulangan array hasil
 
-//jika !check, result.push(arr1[k])
+//jika !check(false) (di result belum ada), result.push(arr1[k])
 function alatTulis(arr1, arr2) {
     //gabungi ke satu arrray dulu
     for (let a = 0; a < arr2.length; a++) {
@@ -40,3 +40,5 @@ var kotakPensil1 = ['pulpen', 'penggaris', 'type-x'];
 var kotakPensil2 = ['penghapus', 'penggaris', 'type-x', 'penghapus', 'pencil'];
 
 console.log(alatTulis(kotakPensil1,kotakPensil2));
+
+///hasil soal kedua : [["pulpen"], ["penggaris","penggaris"],["type-x","type-x"],["penghapus","penghapus"],["pencil"]]
