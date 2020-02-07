@@ -10,29 +10,21 @@ function groupAnimals(animals) {
         }
     }
 
-    //cek huruf pertama animals
-    var cek = '';
-
     var hasil = [];
-    var ind = 0;
 
     for (let k = 0; k < animals.length; k++) {
-        var indeks = -1;
+        var cek = false;
 
-        for (let a = 0; a < cek.length; a++) {
-            if (animals[k][0] == cek[a]) {
-                indeks = a;
+        for (var l = 0; l < hasil.length; l++) {
+            if (hasil[l][0][0] === animals[k][0]) {
+                cek = true;
+                hasil[l].push(animals[k]);
             }
         }
 
-        if (indeks == -1) {
-            hasil[ind] = [];
-            hasil[ind].push(animals[k]);
-            cek += animals[k][0];
-            ind++
-        }
-        else {
-            hasil[indeks].push(animals[k]);
+        if (!cek) {
+            hasil[l] = [];
+            hasil[l].push(animals[k])
         }
     }
 
